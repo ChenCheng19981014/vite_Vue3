@@ -9,6 +9,7 @@
 </template>
 
 <script lang="ts">
+//@ts-ignore
 import MySon from "./../components/son.vue";
 export default {
   components: {
@@ -28,6 +29,6 @@ export default {
 .farther {
   width: 100%;
   height: 100%;
-  background-color: #555;
+  /* background-color: #555; */
 }
 </style>
