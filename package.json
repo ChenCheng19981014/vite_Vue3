@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --mode dev",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-legacy": "^2.0.1",
     "@vueuse/core": "5.3",
     "axios": "^0.27.2",
     "element-plus": "^2.2.14",

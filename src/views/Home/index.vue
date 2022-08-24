@@ -1,9 +1,24 @@
 <template>
   <div class="farther">
-    <button @click="showModal = true">我是弗雷</button>
+    <button
+      @click="
+        () => {
+          showModal = true;
+        }
+      "
+    >
+      我是弗雷
+    </button>
 
     <teleport to="body">
-      <MySon :show="showModal" @close="showModal = false"></MySon>
+      <MySon
+        :show="showModal"
+        @close="
+          (isShow:boolean) => {
+            showModal = isShow;
+          }
+        "
+      ></MySon>
     </teleport>
   </div>
 </template>

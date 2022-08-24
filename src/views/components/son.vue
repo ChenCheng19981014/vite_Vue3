@@ -13,7 +13,7 @@
 import { ref } from "vue";
 const props = defineProps({
   show: {
-    type: Object,
+    type: Boolean,
     default: false,
   },
 });
@@ -21,7 +21,7 @@ const props = defineProps({
 let emit = defineEmits(["close"]);
 
 let closeSon = () => {
-  emit("close");
+  emit("close", false);
 };
 </script>
 
