@@ -2,7 +2,7 @@
 .B {
   width: 30%;
   // height: 50%;
-  height: 500px;
+  height: 700px;
   background-color: #777;
 }
 </style>
