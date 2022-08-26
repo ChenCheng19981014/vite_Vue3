@@ -1,4 +1,14 @@
-import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from "vue-router";
+
+/**
+ * createWebHashHistory  结尾是带#号的
+ * createWebHistory   是不带#号的且
+ *
+ */
 
 const router = createRouter({
   routes: [
