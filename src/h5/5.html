@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <div>
+    <img id="img" />
+    <div class="triangle"></div>
+    <canvas class="drawing"></canvas>
+  </div>
+  <body>
+    <script>
+      const people = window.indexedDB.open("person", 1); // 数据库名称，版本号
+
+      people.onsuccess = (event) => {
+        // 监听数据库创建成功事件
+        let db = event.target.result; // 数据库对象
+        console.log("数据库打开成功");
+
+        db.transaction(["product"], "readwrite")
+          .objectStore("product")
+          .add({ pro_id: 123456, pro_name: "大白菜" });
+      };
+
+      people.onerror = (error) => {
+        console.log("数据库打开报错");
+      };
+
+      people.onupgradeneeded = (event) => {
+        // 数据库创建或升级的时候会触发
+        db = event.target.result;
+        let storeName = "product"; // 表名
+        if (!db.objectStoreNames.contains(storeName)) {
+          // 判断表是否存在
+          let objectStore = db.createObjectStore(storeName, {
+            keyPath: "pro_id",
+            autoIncrement: true,
+          });
+          objectStore.createIndex("name", "name", { unique: false }); // 创建索引 可以让你搜索任意字段
+        }
+      };
+
+      // const req = window.indexDB
+      //   .open("person", 1)
+      //   .transaction(["product"], "readwrite")
+      //   .objectStore("product")
+      //   .add({ pro_id: 123456, pro_name: "大白菜" });
+    </script>
+  </body>
+</html>

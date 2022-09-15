@@ -8,6 +8,9 @@
 </style>
 <script setup lang="ts">
 import { ref } from "vue";
+import { inject } from "vue";
+const data = inject("changeNum");
+console.log(data, "data");
 </script>
 <template>
   <div class="B"></div>
