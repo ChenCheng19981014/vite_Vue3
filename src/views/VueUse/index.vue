@@ -22,10 +22,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useIntersectionObserver } from "@vueuse/core";
+// 引入
+import { useIntersectionObserver, useWindowScroll } from "@vueuse/core";
 import { defineAsyncComponent, ref } from "vue";
-const A = defineAsyncComponent(() => import("./components/A.vue"));
 import B from "./components/B.vue";
+const A = defineAsyncComponent(() => import("./components/A.vue"));
 const C = defineAsyncComponent(() => import("./components/C.vue"));
 
 /**
@@ -41,6 +42,9 @@ const { stop } = useIntersectionObserver(
     // targetIsVisible.value = isIntersecting;
   }
 );
+const { x, y } = useWindowScroll();
+
+console.log(x.value, y.value, "y");
 
 const loading = ref(true);
 // svg图片

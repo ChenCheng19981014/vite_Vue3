@@ -3,12 +3,15 @@
     <button
       @click="
         () => {
-          showModal = true;
+          // showModal = true;
         }
       "
     >
       我是弗雷
     </button>
+
+    <h1>{{ num }}</h1>
+    <button @click="fnBtn">mixin.js</button>
 
     <teleport to="body">
       <MySon
@@ -26,9 +29,13 @@
 <script lang="ts">
 //@ts-ignore
 import MySon from "./../components/son.vue";
+import { fn } from "./../../mixin/mixin";
 export default {
   components: {
     MySon,
+  },
+  created() {
+    (this as any).num += 1;
   },
   data() {
     return {
@@ -36,7 +43,18 @@ export default {
       showModal: false,
     };
   },
-  methods: {},
+  mixins: [fn],
+  methods: {
+    fnBtn() {
+      console.log(fn, "fn");
+
+      console.log(fn.data().num, "fn");
+
+      fn.methods.fnBtns(1);
+
+      (this as any).num++;
+    },
+  },
 };
 </script>
 
