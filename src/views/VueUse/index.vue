@@ -3,17 +3,7 @@
     <div class="flex-center">
       <div class="loading ring"></div>
     </div>
-    <suspense>
-      <template #default>
-        <A />
-      </template>
-      <template #fallback>
-        <div>加载中...</div>
-        <div class="flex-center">
-          <div class="loading ring"></div>
-        </div>
-      </template>
-    </suspense>
+    <A />
     <B />
     <div ref="target" class="c-father">
       <C v-if="targetIsVisible" />
@@ -24,10 +14,16 @@
 <script lang="ts" setup>
 // 引入
 import { useIntersectionObserver, useWindowScroll } from "@vueuse/core";
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent, ref, provide, computed } from "vue";
+import A from "./components/A.vue";
 import B from "./components/B.vue";
 const A = defineAsyncComponent(() => import("./components/A.vue"));
 const C = defineAsyncComponent(() => import("./components/C.vue"));
+// const A = defineAsyncComponent(() => import("./components/A.vue"));
+
+provide("changeNum", 100);
+
+const num = computed(() => {});
 
 /**
  * 功能
@@ -39,7 +35,7 @@ const targetIsVisible = ref(false);
 const { stop } = useIntersectionObserver(
   target,
   ([{ isIntersecting }]: any) => {
-    // targetIsVisible.value = isIntersecting;
+    targetIsVisible.value = isIntersecting;
   }
 );
 const { x, y } = useWindowScroll();
@@ -65,11 +61,6 @@ const svg = `
   width: 100%;
   height: 100%;
   background-color: #555;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
-  /* align-items: center; */
 
   .c-father {
     width: auto;

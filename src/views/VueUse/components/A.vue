@@ -7,12 +7,19 @@
   // animation: spin 0.1s infinite linear;
 }
 </style>
+
+<template>
+  <div class="A">
+    <!-- <div>{{ list }}</div> -->
+
+  </div>
+</template>
+
 <script setup lang="ts">
+//@ts-ignore
+import cc from "npm-cc";
 import { ref } from "vue";
 import { getJson } from "../../../api";
-import tool from "npm-cc";
-
-console.log(tool, "tool");
 /***
  * 数据请求
  */
@@ -32,10 +39,3 @@ console.log(tool, "tool");
 // const downLoad = () => {
 //   cc.fn.downloadFile(img, "新图片");
 // };
-</script>
-<template>
-  <div class="A">
-    <button @click="">下载</button>
-  </div>
-</template>
-910618

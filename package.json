@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --mode dev",
+    "serve": "vite --mode pro",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "preview": "vite preview"
   },

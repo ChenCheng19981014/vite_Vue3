@@ -13,8 +13,12 @@ const viteUrl = import.meta.env;
 console.log(viteUrl.VITE_APP_BASE_HTTP_BASE_URL, "viteUrl");
 
 let instance = axios.create({
+  // 基础的url
   baseURL: viteUrl.VITE_APP_BASE_HTTP_BASE_URL,
+  // 超时时间
   timeout: 100000,
+  // withCredentials: true,  //跨域携带cookie
+  // 请求头
   headers: {
     get: {
       "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -25,11 +29,12 @@ let instance = axios.create({
   } as any,
 });
 
-// 拦截器
+// 添加请求拦截器
 instance.interceptors.request.use((config) => {
   return config;
 });
 
+// 添加响应拦截器
 instance.interceptors.response.use((data) => {
   //成功返回信息
   if (data.status === NETWORD_SUCCESS_CODE) {
