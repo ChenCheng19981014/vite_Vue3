@@ -9,6 +9,7 @@
 import MySon from "./../components/son.vue";
 import { myMixins } from "../../mixins";
 import { getJson } from "../../api";
+import { fn } from "./../../mixin/mixin";
 
 /**
  *  块格式上下文的条件

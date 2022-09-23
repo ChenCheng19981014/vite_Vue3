@@ -12,7 +12,6 @@
   <div class="A">
     <!-- <div>{{ list }}</div> -->
 
-    <button @click="downLoad">下载</button>
   </div>
 </template>
 
@@ -21,7 +20,6 @@
 import cc from "npm-cc";
 import { ref } from "vue";
 import { getJson } from "../../../api";
-
 /***
  * 数据请求
  */
@@ -30,17 +28,14 @@ import { getJson } from "../../../api";
 
 // const list = JSON.stringify(res);
 
-let url =
-  "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fstatic1.bigstockphoto.com%2Fthumbs%2F2%2F4%2F7%2Flarge1500%2F74295409.jpg&refer=http%3A%2F%2Fstatic1.bigstockphoto.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664350962&t=4a2f7fc1fd0daa1b1e56bfc38e6ed706";
+// let url =
+//   "https://img1.baidu.com/it/u=282903700,3028230046&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500";
+// let img: any;
 
-let img = "";
-
-(cc as any).fn.imgUrlToBase64(url, (res: any) => {
-  console.log(res, "走走");
-  img = res;
-});
-
-const downLoad = () => {
-  (cc as any).fn.downloadFile(img, "图片");
-};
-</script>
+// cc.fn.imgUrlToBase64(url, (res: any) => {
+//   img = res;
+// });
+// // 下载
+// const downLoad = () => {
+//   cc.fn.downloadFile(img, "新图片");
+// };
