@@ -9,8 +9,6 @@
 import MySon from "./../components/son.vue";
 import { myMixins } from "../../mixins";
 import { getJson } from "../../api";
-const res = await getJson();
-console.log(res, "res");
 
 /**
  *  块格式上下文的条件
