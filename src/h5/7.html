@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .app {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(51, 51, 51);
+    }
+    .box {
+      width: 500px;
+      height: 50px;
+      background-color: rgb(80, 80, 80);
+      border-radius: 5px;
+      overflow: hidden;
+      transform: rotateY(0);
+      box-shadow: -10px -10px 15px #323232, 10px 10px 15px #444;
+      transition: transform 0.4s cubic-bezier(0, 0, 0.48, 1),
+        box-shadow 0.4s linear, background-color 0.4s linear;
+      transition: transform 0.4s cubic-bezier(0, 0, 0.48, 1),
+        box-shadow 0.4s linear, background-color 0.4s linear;
+    }
+
+    .box:hover {
+      transform: rotateY(45deg);
+      /* transition: left 1s cubic-bezier(0.82, 0.12, 0.18, 0.88),
+        box-shadow 0.4s linear; */
+    }
+  </style>
+  <div class="app">
+    <div class="box"></div>
+  </div>
+  <body>
+    <script></script>
+  </body>
+</html>

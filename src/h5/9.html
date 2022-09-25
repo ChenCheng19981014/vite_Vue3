@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .app {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .test-txt > span {
+      font-size: 100px;
+      letter-spacing: 20px;
+      color: #faedb7;
+      animation: shadowing 1s ease-in-out infinite alternate;
+    }
+    @keyframes shadowing {
+      to {
+        color: #ff0266;
+        text-shadow: 20px 0 70px #ff0266;
+      }
+      /* form {
+        color: #28ba60;
+        text-shadow: 20px 0 70px #28ba60;
+      } */
+    }
+    .test-txt :nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .test-txt :nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    .test-txt :nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    .test-txt :nth-child(5) {
+      animation-delay: 0.8s;
+    }
+    .test-txt :nth-child(6) {
+      animation-delay: 1s;
+    }
+    .test-txt :nth-child(7) {
+      animation-delay: 1.2s;
+    }
+    .test-txt :nth-child(8) {
+      animation-delay: 1.4s;
+    }
+  </style>
+  <div class="app">
+    <div class="test-txt">
+      <span>I</span>
+      <span>N</span>
+      <span>F</span>
+      <span>I</span>
+      <span>N</span>
+      <span>I</span>
+      <span>T</span>
+      <span>E</span>
+    </div>
+  </div>
+  <body>
+    <script></script>
+  </body>
+</html>
