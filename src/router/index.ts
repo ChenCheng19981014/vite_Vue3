@@ -25,15 +25,6 @@ const router = createRouter({
       name: "Home",
       //组件名称
     },
-    {
-      path: "/vue-use",
-      //路由到的地址(自定义)
-      component: () => import("./../views/VueUse/index.vue"),
-      //引入组件，组件Home.vue所在路径
-      //Home.vue是需要路由的vue组件
-      name: "VueUse",
-      //组件名称
-    },
   ],
   history: createWebHashHistory(),
 });
