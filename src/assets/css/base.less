@@ -1,0 +1,36 @@
+/*
+ * @Description: 弹性居中（父元素）
+ */
+ .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+/*
+* @Description: 绝对定位居中（子元素）
+*/
+.absolute-center {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+/* 清除浮动 */
+.clearfix {
+    zoom: 1;
+}
+  
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}

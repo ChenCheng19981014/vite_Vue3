@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 500px;
+      height: auto;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    .div1 {
+      margin-top: 50px;
+      float: left;
+      background-color: aqua;
+      width: 100px;
+      height: 100px;
+    }
+    .div2 {
+      background-color: red;
+      float: left;
+      width: 100px;
+      height: 100px;
+    }
+
+    .clearflow {
+      content: " ";
+      display: block;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      clear: both;
+    }
+
+    /* 朝左下 */
+   ::v-deep .triangle-bottomleft {
+      width: 0;
+      height: 0;
+      border-bottom: 100px solid red;
+      border-left: 100px solid transparent;
+    }
+  </style>
+  <div class="container">
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <div class="triangle-bottomleft"></div>
+  </div>
+  <body>
+    <script></script>
+  </body>
+</html>
