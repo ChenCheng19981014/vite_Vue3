@@ -1,10 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <suspense>
-    <router-view></router-view>
-  </suspense>
+  <router-view></router-view>
 </template>
+
+<script></script>
 
 <style>
 * {

@@ -27,24 +27,6 @@ const changeCss = (i: string, index: any) => {
   console.log(index, "index");
 };
 
-console.time("计时器名称");
-Array.from({ length: 10000001 });
-
-// for (let index = 0; index < 1000; index++) {
-//   // new Array(1000).fill("");
-//   Array.from({ length: 1000 });
-// }
-console.timeEnd("计时器名称");
-console.time("计时器名称");
-
-// new Array(10000001).fill("").map((I) => {
-//   console.log(I, "I");
-// });
-
-const a = new Array(20000).join("x");
-console.log(a, "a");
-console.timeEnd("计时器名称");
-
 /**
  *  块格式上下文的条件
  *  display inline-block  table-ceil
