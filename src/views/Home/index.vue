@@ -1,8 +1,12 @@
 <template>
   <div class="farther">
     <div class="bar">
-      <div class="animation"></div>
-      <div v-for="(i, index) in arr" :class="i" @click="changeCss(i, index)">
+      <div class="animation" ref="animaDom"></div>
+      <div
+        v-for="(i, index) in arr"
+        :class="index === cssIndex ? `${i} selectColor` : i"
+        @click="changeCss(i, index)"
+      >
         {{ i }}
       </div>
     </div>
@@ -18,13 +22,21 @@ import { fn } from "./../../mixin/mixin";
 import { ref } from "vue";
 
 const arr = ["a", "b", "c"];
-let cssIndex = ref(-1);
-
+let cssIndex = ref(0);
+let animaDom = ref(null);
+let lastIndex = 0;
 // :class="index === cssIndex ? `${i} bgc` : i"
 
 const changeCss = (i: string, index: any) => {
-  // cssIndex.value = index;
-  console.log(index, "index");
+  if (lastIndex === index) return;
+
+  cssIndex.value = index;
+
+  (animaDom as any).value.style["left"] = `${index * 100 + index * 2 + 1}px `;
+
+  lastIndex = index;
+
+  console.log(index * 100 + index + 1, "left的值");
 };
 
 /**
@@ -58,7 +70,7 @@ const changeCss = (i: string, index: any) => {
   align-items: center;
   width: 100px;
   height: 50px;
-  transition: all 0.2s ease-in-out;
+  transition: all 1s;
 }
 .bgc {
   background-color: skyblue;
@@ -67,14 +79,22 @@ const changeCss = (i: string, index: any) => {
 
 .animation {
   .bgc;
+  color: black;
   border-radius: 10px;
   position: absolute;
-  width: -100px !important;
+  left: 1px;
+}
+
+.selectColor {
+  color: black;
+  opacity: 1 !important;
+  z-index: 2;
 }
 
 .bar > div:hover {
-  opacity: 0.2;
+  opacity: 0.1;
   background-color: skyblue;
+  transition: all 1s;
 }
 
 .a {

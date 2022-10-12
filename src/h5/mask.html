@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>mask遮罩</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .app {
+      width: 100vw;
+      height: 100vh;
+      background-color: #777;
+    }
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #fff;
+      padding: 50px;
+      -webkit-mask-image: linear-gradient(
+          to right,
+          #000,
+          #000 13%,
+          transparent 12%,
+          transparent 82%,
+          #000 82%
+        ),
+        url("./mask.svg");
+      -webkit-mask-repeat: none;
+      -webkit-mask-position: center;
+    }
+
+    /* 清除浮动 */
+
+    /* .clearfix::after{
+        display: block;
+        content: '';
+        clear: both;
+        visibility: hidden;
+        height: 0;
+    } */
+
+    .clearfix::before,
+    .clearfix::after {
+      content: "";
+      display: table;
+    }
+    .clearfix::after {
+      clear: both;
+    }
+  </style>
+  <div class="app">
+    <div class="box">
+      随着社会经济的复苏和回暖，在清朝，资本主义也蓬勃向上地壮大起来，这本身就与严重制约它发展的封建主义制度不可避免地产生冲突。这种冲突在上层建筑领域中的集中表现就是：处于萌芽状态的民主主义思想与传承千年、又居于稳固统治地位的封建宗法制度之间的矛盾斗争。
+      有了这样的时代大背景，《红楼梦》无疑成为社会现实的一个浓缩舞台，各种人物登场：它以盛极一时的贾、史、王、薛四大家族的日常生活、饮食起居，贾家荣、宁两府逐渐衰败为着墨点；以贾宝玉、林黛玉的爱情故事为主线；以贾府当权人物处理各种事务所体现出来的荒淫腐败、虚伪欺诈为细节，描绘了在封建社会制度迫害下的纯洁少女的悲惨遭遇和反抗性格，歌颂了贾宝玉、林黛玉不同于以往“一脉相承”“封妻荫子世家子弟”的叛逆精神，同时也对日趋严酷的社会现实加以揭露，昭示了封建社会必将灭亡的历史趋势。
+      《红楼梦》作者曹雪芹本生就一个官宦世家，曹家高祖曹振彦，原本是清朝皇室的奴仆随多尔衮入关后，屡次因为战功升迁。他的后代曹玺的妻子孙氏，曾经当过康熙帝的奶妈，圣宠更为浩荡。
+      康熙皇帝即位后，康熙二年（1663）特意任命曹玺任江宁织造。且不谈江南富庶，任职江南是个“美差”。单提织造这个职务，乃是专为皇帝驻京外办差的。曹家深得皇帝信任，又善于经营，经过曹玺、曹寅两代数十年努力，成为一代数得着的大户也顺理成章。康熙喜好游玩，曾经六次南巡江南，其中有四次是由曹寅于江宁承办接驾任务的，甚至圣驾中途休息就在江宁织造署里。
+    </div>
+  </div>
+  <body>
+    <script>
+      let res =
+        242 +
+        457 +
+        610 +
+        510 +
+        288 +
+        13 +
+        1937 +
+        138 +
+        69 +
+        4217 +
+        2864 +
+        600 +
+        2700 -
+        425;
+
+      console.log(res, "res");
+    </script>
+  </body>
+</html>
